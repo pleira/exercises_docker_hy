@@ -1,0 +1,22 @@
+~/dev/hy/exercises_docker_hy (master)$ docker exec -it looper2 bash 
+root@9a128a308c2e:/usr/app# ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.7  0.3 589528 30628 ?        Ssl  12:33   0:00 node index
+root        16  1.5  0.0  18188  3256 pts/0    Ss   12:34   0:00 bash
+root        21  0.0  0.0  36640  2876 pts/0    R+   12:34   0:00 ps aux
+root@9a128a308c2e:/usr/app# tail -f ./logs.txt
+Sun, 15 Sep 2019 12:34:14 GMT
+Sun, 15 Sep 2019 12:34:17 GMT
+Sun, 15 Sep 2019 12:34:20 GMT
+Sun, 15 Sep 2019 12:34:23 GMT
+Secret message is:
+"Docker is easy"
+Sun, 15 Sep 2019 12:34:29 GMT
+Sun, 15 Sep 2019 12:34:32 GMT
+Sun, 15 Sep 2019 12:34:35 GMT
+Sun, 15 Sep 2019 12:34:38 GMT
+Secret message is:
+"Docker is easy"
+^C
+root@9a128a308c2e:/usr/app# 
+
