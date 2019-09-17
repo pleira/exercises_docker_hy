@@ -1,13 +1,17 @@
-FROM ubuntu
+FROM node
 
-RUN  apt-get update && apt-get install -y node  
+WORKDIR /usr/app
 
 # clone locally the repository https://github.com/docker-hy/frontend-example-docker
-COPY config.js package.json package-lock.json README.md src util webpack.config.js .
+# build it with node, copy  
+COPY . .
 
-RUN npm run build && npm install -g serve	
+RUN npm install \
+ && npm run build \
+ && npm install -g serve 
 
 EXPOSE 5000
 
+# CMD npm start
 CMD ["serve", "-s", "-l", "5000", "dist"]
 
